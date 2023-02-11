@@ -116,7 +116,7 @@ In  **Interactive Mode**  the commands will need to be written with a keyboard w
 
 Most commands have several options or arguments that can be used when executing the program. In order for the Shell to recognize those parameters, the user must separate everything with spaces.
 
-Example:
+Example;
 
 ```
 
@@ -126,7 +126,6 @@ user@ubuntu:~/AirBnB$ ./console.py
 user@ubuntu:~/AirBnB$ ./console.py
 
 ```
-
 or
 
 ```
