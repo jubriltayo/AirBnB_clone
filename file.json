@@ -46,5 +46,62 @@
         "name": "My_First_Model",
         "my_number": 89,
         "__class__": "BaseModel"
+    },
+    "User.1a90dfd3-78b1-4ef0-953e-14e93a3481e3": {
+        "id": "1a90dfd3-78b1-4ef0-953e-14e93a3481e3",
+        "created_at": "2023-02-11T23:07:00.549396",
+        "updated_at": "2023-02-11T23:07:00.549418",
+        "first_name": "Betty",
+        "last_name": "Bar",
+        "email": "airbnb@mail.com",
+        "password": "root",
+        "__class__": "User"
+    },
+    "User.c5d58719-98a4-4001-867c-76fee22dac79": {
+        "id": "c5d58719-98a4-4001-867c-76fee22dac79",
+        "created_at": "2023-02-11T23:07:00.552773",
+        "updated_at": "2023-02-11T23:07:00.552800",
+        "first_name": "John",
+        "email": "airbnb2@mail.com",
+        "password": "root",
+        "__class__": "User"
+    },
+    "User.33b99242-3fa7-4ce1-ab03-72374d1289f5": {
+        "id": "33b99242-3fa7-4ce1-ab03-72374d1289f5",
+        "created_at": "2023-02-11T23:08:57.440671",
+        "updated_at": "2023-02-11T23:08:57.440692",
+        "first_name": "Betty",
+        "last_name": "Bar",
+        "email": "airbnb@mail.com",
+        "password": "root",
+        "__class__": "User"
+    },
+    "User.4c39baa6-392e-461e-b4b1-5fca7eefeb1f": {
+        "id": "4c39baa6-392e-461e-b4b1-5fca7eefeb1f",
+        "created_at": "2023-02-11T23:08:57.441908",
+        "updated_at": "2023-02-11T23:08:57.441928",
+        "first_name": "John",
+        "email": "airbnb2@mail.com",
+        "password": "root",
+        "__class__": "User"
+    },
+    "User.7bb4b2b6-2d5d-486a-a1c1-fc71967a83c5": {
+        "id": "7bb4b2b6-2d5d-486a-a1c1-fc71967a83c5",
+        "created_at": "2023-02-11T23:09:23.461148",
+        "updated_at": "2023-02-11T23:09:23.461171",
+        "first_name": "Betty",
+        "last_name": "Bar",
+        "email": "airbnb@mail.com",
+        "password": "root",
+        "__class__": "User"
+    },
+    "User.f53c473f-1df0-4f93-9531-be1465b6fee4": {
+        "id": "f53c473f-1df0-4f93-9531-be1465b6fee4",
+        "created_at": "2023-02-11T23:09:23.462929",
+        "updated_at": "2023-02-11T23:09:23.462951",
+        "first_name": "John",
+        "email": "airbnb2@mail.com",
+        "password": "root",
+        "__class__": "User"
     }
 }
