@@ -18,7 +18,7 @@ Some of the commands available are:
 - destroy
 - count
 
-And as part of the implementation of the command line interpreter coupled with the backend and file storage system, the folowing actions can be performed:
+And as part of the implementation of the command line interpreter coupled with the backend and file storage system, the folowing actions can be performed;
 -   Creating new objects (ex: a new User or a new Place)
 -   Retrieving an object from a file, a database etc…
 -   Doing operations on objects (count, compute stats, etc…)
