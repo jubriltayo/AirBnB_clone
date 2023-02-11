@@ -4,7 +4,7 @@
 ## Project Description
 This is the first part of the AirBnB clone project where we worked on the backend of the project whiles interfacing it with a console application with the help of the cmd module in python.
 
-Data (python objects) generated are stored in a json file and can be accessed with the help of the json module in python
+Data (python objects) generated are stored in a json file and can be accessed with the help of the json module in python.
 
 ## Description of the command interpreter:
 The interface of the application is just like the Bash shell except that this has a limited number of accepted commands that were solely defined for the purposes of the usage of the AirBnB website.
@@ -18,7 +18,7 @@ Some of the commands available are:
 - destroy
 - count
 
-And as part of the implementation of the command line interpreter coupled with the backend and file storage system, the folowing actions can be performed:
+And as part of the implementation of the command line interpreter coupled with the backend and file storage system, the folowing actions can be performed;
 -   Creating new objects (ex: a new User or a new Place)
 -   Retrieving an object from a file, a database etc…
 -   Doing operations on objects (count, compute stats, etc…)
@@ -41,7 +41,7 @@ After cloning the repository you will have a folder called AirBnB_clone. In here
 >
 > models/engine/file_storage.py: Class that serializes instances to a JSON file and deserializes JSON file to instances
 > 
-> models/__ init __.py:  A unique `FileStorage` instance for the application
+> models/__ init __.py:  A unique `FileStorage` instance for the application.
 > 
 > models/base_model.py: Class that defines all common attributes/methods for other classes.
 > 
@@ -116,7 +116,7 @@ In  **Interactive Mode**  the commands will need to be written with a keyboard w
 
 Most commands have several options or arguments that can be used when executing the program. In order for the Shell to recognize those parameters, the user must separate everything with spaces.
 
-Example:
+Example;
 
 ```
 
@@ -126,7 +126,6 @@ user@ubuntu:~/AirBnB$ ./console.py
 user@ubuntu:~/AirBnB$ ./console.py
 
 ```
-
 or
 
 ```
