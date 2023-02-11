@@ -29,7 +29,8 @@ class FileStorage():
 
     def reload(self):
         """Deserializes the JSON file into dictionary
-            representation of the instances"""
+            representation of the instances
+            """
         try:
             with open(self.__file_path, "r", encoding="utf-8") as f:
                 obj_dict = json.load(f)
