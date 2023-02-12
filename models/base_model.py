@@ -5,16 +5,15 @@ from datetime import datetime
 import models
 
 
-class BaseModel:
+class BaseModel():
+    """base/parent class"""
     def __init__(self, *args, **kwargs):
         """Initializes class with instance attributes:
             id, created_at, updated_at
         """
         if len(kwargs) != 0:
             for key, value in kwargs.items():
-                if key == "__class__":
-                    continue
-                elif key == "created_at" or key == "updated_at":
+                if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.fromisoformat(value)
                 else:
                     self.__dict__[key] = value
