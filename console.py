@@ -14,7 +14,15 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """class for command interpreter"""
     prompt = "(hbnb) "
-    __classes = ["BaseModel", "User", "Place", "State", "City", "Amenity", "Review"]
+    __classes = [
+                    "BaseModel",
+                    "User",
+                    "Place",
+                    "State",
+                    "City",
+                    "Amenity",
+                    "Review"
+                ]
 
     def do_quit(self, arg):
         """Quit command to exit the program
@@ -28,14 +36,14 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """empty line no longer execute last command"""
-        pass
+        return
 
     def do_create(self, arg):
         """creates an instance of BaseModel, saves it
             to JSON file and prints the id
         """
         args = arg.split()
-        
+
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in self.__classes:
@@ -51,35 +59,33 @@ class HBNBCommand(cmd.Cmd):
         """
         args = arg.split()
 
-        object_id = f"{args[0]}.{args[1]}"
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in self.__classes:
             print("** class doesn't exist **")
-        elif len(args) < 2: 
+        elif len(args) == 1:
             print("** instance id missing **")
-        elif object_id not in storage.all():
+        elif f"{args[0]}.{args[1]}" not in storage.all():
             print("** no instance found **")
         else:
-            print(storage.all()[object_id])
-            
+            print(storage.all()[f"{args[0]}.{args[1]}"])
+
     def do_destroy(self, arg):
         """Deletes an instance based on class name and id
             and saves the changes into JSON file
         """
         args = arg.split()
 
-        object_id = f"{args[0]}.{args[1]}"
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in self.__classes:
             print("** class doesn't exist **")
-        elif len(args) < 2: 
+        elif len(args) == 1:
             print("** instance id missing **")
-        elif object_id not in storage.all():
+        elif f"{args[0]}.{args[1]}" not in storage.all():
             print("** no instance found **")
         else:
-            del storage.all()[object_id]
+            del storage.all()[f"{args[0]}.{args[1]}"]
         storage.save()
 
     def do_all(self, arg):
@@ -93,27 +99,44 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in self.__classes:
             print("** class doesn't exist **")
         else:
-            print([str(v) for k, v in storage.all().items() if k.startswith(args[0])])
-    
+            s = storage.all().items()
+            print([str(v) for k, v in s if k.startswith(args[0])])
+
     def do_update(self, arg):
         """Updates an instance based on class name and id by adding
             or updating attribute
         """
         args = arg.split()
 
-        object_id = f"{args[0]}.{args[1]}"
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in self.__classes:
             print("** class doesn't exist **")
-        elif len(args) < 2: 
+        elif len(args) == 1:
             print("** instance id missing **")
-        elif object_id not in storage.all():
+        elif f"{args[0]}.{args[1]}" not in storage.all():
             print("** no instance found **")
-        elif len(args) < 3: 
+        elif len(args) == 2:
             print("** attribute name missing **")
-        elif len(args) < 4: 
-            print("** value missing **")      
+        elif len(args) == 3:
+            print("** value missing **")
+        else:
+            obj = storage.all()[f"{args[0]}.{args[1]}"]
+            attr_name = args[2]
+            attr_value = args[3]
+
+            if attr_value[0] == '"':
+                attr_value = attr_value[1:-1]
+
+            if hasattr(obj, attr_name):
+                type_ = type(getattr(obj, attr_name))
+                if type_ in [str, int, float]:
+                    attr_value = type_(attr_value)
+                    setattr(obj, attr_name, attr_value)
+            else:
+                setattr(obj, attr_name, attr_value)
+            storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
