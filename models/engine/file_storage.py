@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 import json
 from models.base_model import BaseModel
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 
 class FileStorage():
@@ -24,12 +30,14 @@ class FileStorage():
             the JSON file
         """
         with open(self.__file_path, "w", encoding="utf-8") as f:
-            d = {key : value.to_dict() for key, value in self.__objects.items()}
+            value = value.to_dict()
+            d = {key: value for key, value in self.__objects.items()}
             json.dump(d, f)
 
     def reload(self):
         """Deserializes the JSON file into dictionary
-            representation of the instances"""
+            representation of the instances
+            """
         try:
             with open(self.__file_path, "r", encoding="utf-8") as f:
                 obj_dict = json.load(f)
