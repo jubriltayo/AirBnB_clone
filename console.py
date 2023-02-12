@@ -145,6 +145,25 @@ class HBNBCommand(cmd.Cmd):
         if args[0] in self.__classes:
             if args[1] == "all()":
                 self.do_all(args[0])
+            elif args[1] == "count()":
+                s = storage.all().items()
+                list_ = [v for k, v in s if k.startswith(args[0])]
+                print(len(list_))
+            elif args[1].startswith("show"):
+                id_ = args[1].split('"')[1]
+                self.do_show(f"{args[0]} {id_}")
+            elif args[1].startswith("destroy"):
+                id_ = args[1].split('"')[1]
+                self.do_destroy(f"{args[0]} {id_}")
+            elif args[1].startswith("update"):
+                split_ = args[1].split('(')
+                split_ = split_[1].split(')')
+                split_ = split_[1].split(', ')
+
+                id_ = split_[0].strip('"')
+                attr_name = split_[1].strip('"')
+                attr_value = split_[2].strip('"')
+                self.do_update(f"{args[0]} {id_} {attr_name} {attr_value}")
 
 
 if __name__ == '__main__':
