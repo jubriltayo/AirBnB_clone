@@ -145,6 +145,10 @@ class HBNBCommand(cmd.Cmd):
         if args[0] in self.__classes:
             if args[1] == "all()":
                 self.do_all(args[0])
+            elif args[1] == "count()":
+                s = storage.all().items()
+                list_ = [v for k, v in s if k.startswith(args[0])]
+                print (len(list_))
 
 
 if __name__ == '__main__':
