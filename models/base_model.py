@@ -15,7 +15,7 @@ class BaseModel():
             for key, value in kwargs.items():
                 if key == "__class__":
                     continue
-                elif key == "created_at" or key == "updated_at":
+                elif key == "updated_at" or key == "created_at":
                     self.__dict__[key] = datetime.fromisoformat(value)
                 else:
                     self.__dict__[key] = value
