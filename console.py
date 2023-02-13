@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Module for command interpretation"""
 import cmd
-import re
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
