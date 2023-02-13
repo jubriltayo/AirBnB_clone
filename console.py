@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for command interpretation"""
 import cmd
+import re
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
@@ -13,6 +14,7 @@ from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
     """class for command interpreter"""
+
     prompt = "(hbnb) "
     __classes = [
                     "BaseModel",
@@ -22,7 +24,7 @@ class HBNBCommand(cmd.Cmd):
                     "City",
                     "Amenity",
                     "Review"
-                ]
+               	]
 
     def do_quit(self, arg):
         """Quit command to exit the program
