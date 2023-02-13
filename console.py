@@ -159,7 +159,6 @@ class HBNBCommand(cmd.Cmd):
             elif args[1].startswith("update"):
                 split_ = args[1].split('(')
                 split_ = split_[1].split(')')
-                split_ = split_[0].split(', ')
                 if ('{') in split_[0]:
                     # if dictionary is passed
                     id_strip = split_[0].split(', {')
